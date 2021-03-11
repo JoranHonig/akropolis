@@ -50,8 +50,8 @@ contract VaultSavings is IVaultSavings, OwnableUpgradeable, ReentrancyGuardUpgra
     }
 
     /// if_succeeds {:msg "Value is put into the wallet associated with this savings vault"} 
-    /// let token := IVault(_vault).token()
-    /// let vault = IERC20Upgradable(token)
+    /// let token := IVault(_vault).token() in
+    /// let vault := IERC20Upgradable(token) in
     /// old(token.balanceOf(address(this))) + value == token.balanceOf(address(this)); 
     /// if_succeeds {:msg "the vault must be registered"} old(isVaultRegistered(_vault));
     function deposit(address _vault, uint256 _amount) external override nonReentrant whenNotPaused returns(uint256 lpAmount)  {
